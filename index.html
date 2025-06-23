@@ -1,1 +1,529 @@
-<h1>hola mundo</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Agregada la meta para que sea responsive -->
+  <title>Mishell Chandra Fabiola Santillana Quispe</title>
+  <meta name="description" content="Mishell Chandra Fabiola Santillana Quispe, estudiante de Administración y Marketing con muchas ganas de aprender, crear y dejar huella. Aquí puedes conocer más sobre mi camino y los proyectos que me motivan.">
+  <meta name="keywords" content="Valery Cielo Iquise, Administración, Marketing, perfil académico, estudiante UCSP">
+  <meta name="google-site-verification" content="6LE3jODuPc3nSTFdjXG0kYYPC-K5a9Fu9PBwnhbsFbo" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ecd4f1;
+      background-image: radial-gradient(circle, rgba(209, 166, 180, 255) 10%, transparent 10%), radial-gradient(circle, rgba(209, 166, 180, 255) 10%, transparent 10%);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+    }
+    @font-face {
+      font-family: 'Augusta';  /* Nombre que asignas a la fuente */
+      src: url('fuentes/Bratsy Script Demo.otf') format('opentype'); /* Ubicación del archivo .otf */
+    }
+
+    @font-face {
+      font-family: 'Grobold';  /* Nombre que asignas a la fuente */
+      src: url('fuentes/GROBOLD.ttf') format('opentype'); /* Ubicación del archivo .otf */
+    }
+    .perfil {
+      max-width: 1000px;
+      min-height: 220px;
+      margin: 40px auto;
+      background-color: #fbffe5;
+      border-radius: 20px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      border: solid 3px #cbcbcb;
+    }
+
+    .perfil img.avantar{
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border: solid 7px #405ca5;
+    }
+
+    .informacion {
+      flex: 1;
+      text-align: center;
+    }
+
+    .informacion p {
+      color: #bb7b8d;
+      font-family: 'Grobold';
+      font-size: 26px;
+    }
+
+    .informacion h1 {
+      font-family: 'Augusta';
+      font-size: 75px;
+      font-weight: normal;
+      margin-bottom: 15px;
+      color: #405ca5;
+      text-shadow: -4px 4px 0px #f1c5d4;
+    }
+    .etiquetas {
+      margin-bottom: 15px;
+    }
+    .etiquetas span {
+      background-color: #f2c3d3;
+      color: #405ca5;
+      padding: 6px 15px;
+      border-radius: 15px;
+      margin-right: 10px;
+      font-size: 16px;
+      border: solid 2px #a4aec9;
+    }
+
+    .secciones {
+      max-width: 100%;
+      margin: 40px auto;
+      padding: 10px 20px;
+    }
+
+    .carrusel-container {
+      position: relative;
+      width: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0px 30px 60px 30px;
+    }
+
+    .contenedor-carrusel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .sombra {
+      opacity: 1;
+      background: repeating-linear-gradient(-45deg, #667cb7, #667cb7 6px, #405ca5 6px, #405ca5 30px);
+      border-radius: 15px;
+      position: relative;
+      margin-right: 20px;
+      max-width: 350px;
+      margin-top: 10px;
+      min-height: 200px;
+    }
+
+    .seccion {
+      flex: 0 0 auto;
+      min-width: 350px;
+      max-width: 350px;
+      min-height: 390px;
+      background-color: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin: -9px 10px 0px;
+      box-sizing: border-box;
+      border: 2px solid #405ca5;
+    }
+
+    .seccion h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #405ca5;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 4.5px;
+      padding-top: 0px;
+      border-left: 3px solid #dddddd;
+      margin-left: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 20px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item img.star {
+      position: absolute;
+      left: -21px;
+      top: -5px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .timeline-item p {
+      margin: 5px 0 8px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .timeline-item span {
+      background-color: #f2c3d3;
+      border-radius: 15px;
+      color: #405ca5;
+      margin-top: 5px;
+      padding: 4px 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .sticker {
+      width: 80px;
+      position: relative; /* o static, para que se quede donde está en el flujo */
+    }
+
+    @keyframes destello {
+      0% {
+        box-shadow: 0 0 10px rgba(183, 107, 252, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(183, 107, 252, 1);
+      }
+    }
+
+    .flechas {
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    .flecha {
+      background-color: transparent;
+      color: #405ca5;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 24px;
+      z-index: 10;
+    }
+
+    /* Media Queries para hacer que sea responsive */
+
+    @media (max-width: 768px) {
+      .perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .perfil img {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .informacion h1 {
+        font-size: 48px;
+      }
+
+      .secciones {
+        padding: 10px;
+      }
+
+      .carrusel-container {
+        width: auto;
+      }
+
+      .seccion {
+        min-width: 280px; /* Tamaño más pequeño para pantallas más pequeñas */
+        max-width: 280px;
+      }
+
+      .flechas {
+        bottom: -40px;
+      }
+
+      .timeline-item::before {
+        left: -12px;
+        width: 15px;
+        height: 15px;
+      }
+
+      .flecha {
+        font-size: 20px;
+        padding: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .perfil img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .informacion h1 {
+        font-size: 36px;
+      }
+
+      .seccion {
+        min-width: 100%; /* Las cajas se vuelven de ancho completo en pantallas pequeñas */
+        margin-right: 0;
+      }
+
+      .flechas {
+        bottom: -30px;
+        gap: 10px;
+      }
+
+      .flecha {
+        padding: 8px;
+        font-size: 18px;
+      }
+    }
+.glide {
+      width: 100%;
+      max-width: 920px;
+      margin: 50px auto;
+    }
+    .glide__slides {
+      padding: 20px;
+    }
+    .glide__slide {
+      background-color: #fbffe5;
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid #405ca5;
+      box-shadow: -8px 10px 1px #405ca5;
+    }
+    }
+    .glide__slide img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    /* Media query para dispositivos móviles */
+    @media (max-width: 768px) {
+      .glide__slide {
+        font-size: 14px; /* Ajustamos el tamaño del texto en móviles */
+        padding: 20px;   /* Reducimos el padding en dispositivos pequeños */
+      }
+    }
+    .alumnos {
+      background-color: #fbffe5;
+    border-radius: 20px;
+    padding: 14px 20px;
+    align-items: center;
+border: solid 2px #405ca5;
+    margin: 40px;
+    }
+    .alumnos h2 {
+      text-align: center;
+      color: #405ca5;
+    }
+    .alumnos .columna {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="perfil">
+    <!--<img class="avantar" src="foto.jpg" alt="Foto de perfil">-->
+    <div class="informacion">
+      <p>Mi nombre es...</p>
+      <h1 style="margin-top: -82px;">Mishell Chandra Fabiola</h1>
+      <h1 style="margin-top: -136px;">Santillana Quispe</h1>
+      <div style="margin: -44px 0 25px; display: flex; align-items: center;justify-content: center;     color: #bb7b8d;">
+        <div style="display: flex; align-items: center; margin-right: 15px;">
+          <img class="star" src="icons/mail.svg" alt="star-icon" width="15px" height="15px" style="margin-right: 5px;">mishell.santillana.quispe@gmail.com
+        </div>
+        <div style="display: flex; align-items: center; margin-right: 15px;">
+          <img class="star" src="icons/in.svg" alt="star-icon" width="15px" height="15px"  style="margin-right: 5px;">
+          <a href="https://www.linkedin.com/in/mishell-santillana-10587131b/" target="_blank">mishell-santillana</a>
+        </div>
+        <div>
+          <img src="icons/github.svg" alt="github" width="15px" height="15px">
+          <a href="https://github.com/Mishell-Chandra">Mishell-Chandra</a>
+        </div>
+      </div>
+      <div class="etiquetas">
+        <span>Liderazgo</span>
+        <span>Análisis de datos</span>
+        <span>Orientación a resultados</span>
+        <span>Creativa</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="secciones">
+    <div class="carrusel-container" id="carruselContainer">
+      <div class="contenedor-carrusel" id="contenedorCarrusel">
+        <div class="sombra">
+          <div class="seccion">
+            <h2>PERFIL</h2>
+            <p>Soy estudiante de Administración y Marketing con muchas ganas de aprender, crear y dejar huella. Me considero una persona analítica y resolutiva, con pensamiento crítico y enfoque práctico para enfrentar desafíos con eficacia. Capaz de tomar decisiones bajo presión y aportar soluciones creativas y eficientes en equipo.</p>
+            <div style="text-align: center;"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdnamc4Y21ndTR4eXpiNG5mcnJkdzBnNTA2bXlkMXJseDc0NGhqdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1eEH7dQ2xwN95RwGQf/giphy.gif" height="106px" /></div>
+          </div>
+        </div>
+
+        <div class="sombra">
+          <div class="seccion">
+            <h2>EXPERIENCIA</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <img class="star" src="icons/star.svg" alt="star-icon">
+                <h3>Líder de experiencia</h3>
+                <p>Supervisión de equipos y mejora de la atención al cliente para garantizar una experiencia positiva y eficiente.</p>
+              </div>
+              <div class="timeline-item">
+                <img class="star" src="icons/star.svg" alt="star-icon">
+                <h3>Asesora de ventas</h3>
+                <p>Atención al cliente, asesoramiento en productos y cierre de ventas. Encargada de mantener el orden del punto de venta y cumplir metas diarias.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sombra">
+          <div class="seccion">
+            <h2>EDUCACIÓN</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <img class="star" src="icons/star.svg" alt="star-icon">
+                <h3><a href="https://ucsp.edu.pe/" target="_blank">Universidad Católica San Pablo - Arequipa</a></h3>
+                <p><a href="https://ucsp.edu.pe/carreras/administracion-negocios/" target="_blank">Administración de empresas</a></p>
+                <span>2021 - Actual</span>
+              </div>
+              <div class="timeline-item">
+                <img class="star" src="icons/star.svg" alt="star-icon">
+                <h3><a href="https://www.isur.edu.pe/" target="_blank">Centro de idiomas ISUR - Arequipa</a></h3>
+                <p>Inglés – Nivel intermedio</p>
+                <span>2024 - Actual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sombra">
+          <div class="seccion">
+            <h2>HABILIDADES</h2>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Microsoft Office: Word, Excel, PowerPoint (Nivel intermedio)</div>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Google Workspace (Docs, Sheets, Drive, Looker Studio)</div>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Trabajo en equipo y liderazgo</div>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Organización y gestión del tiempo</div>
+          </div>
+        </div>
+
+        <div class="sombra">
+          <div class="seccion">
+            <h2>CURSOS</h2>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Marketing - Profesor <a href="https://www.linkedin.com/in/arturo-salazar-monroy-a032bb32b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Salazar Monroy Arturo</a></div>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Cálculo en Varias - Profesora <a href="https://www.linkedin.com/in/matilde-pe%C3%B1a-casa-b93b46230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Peña Casa Matilde</a></div>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Análisis de datos - Profesor <a href="https://www.linkedin.com/in/ecuadrosv?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Cuadros Vargas Ernesto</a></div>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Prevención de riesgos - <a href="https://www.arcosdorados.com/tag/mcampus/" target="_blank">ArcosDorados (MCampus)</a></div>
+            <div><img class="star" src="icons/star.svg" alt="star-icon">
+            Atención al cliente - <a href="https://www.arcosdorados.com/tag/mcampus/" target="_blank">ArcosDorados (MCampus)</a></div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Flechas de navegación -->
+      <div class="flechas">
+        <button class="flecha flecha-izquierda" onclick="moverCarrusel(-1)">&#10094;</button>
+        <button class="flecha flecha-derecha" onclick="moverCarrusel(1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+  <div class="alumnos">
+        <h2>COMPAÑEROS</h2>
+        <div class="columna">
+          <div style="flex: 1">
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://aleshka18.github.io/aleshkabeltran/" target="_blank">Aleshka Beltrán Gutiérrez</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://leonardoloayza.github.io/" target="_blank">Leonardo Loayza Paucar</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://valery-cielo-iquise.neocities.org/" target="_blank">Valery Iquise mamani</a></p>  
+          </div>
+        <div style="flex: 1">
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://aleshka18.github.io/aleshkabeltran/" target="_blank">Aleshka Beltrán Gutiérrez</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://leonardoloayza.github.io/" target="_blank">Leonardo Loayza Paucar</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://valery-cielo-iquise.neocities.org/" target="_blank">Valery Iquise mamani</a></p>
+        </div>
+        <div style="flex: 1">
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://aleshka18.github.io/aleshkabeltran/" target="_blank">Aleshka Beltrán Gutiérrez</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://leonardoloayza.github.io/" target="_blank">Leonardo Loayza Paucar</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://valery-cielo-iquise.neocities.org/" target="_blank">Valery Iquise mamani</a></p>
+        </div>
+
+        <div style="flex: 1">
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://aleshka18.github.io/aleshkabeltran/" target="_blank">Aleshka Beltrán Gutiérrez</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://leonardoloayza.github.io/" target="_blank">Leonardo Loayza Paucar</a></p>
+          <p><img class="star" src="icons/star.svg" alt="star-icon">
+        <a href="https://valery-cielo-iquise.neocities.org/" target="_blank">Valery Iquise mamani</a></p>
+        </div>   
+        </div>
+  </div>  
+  </div>
+  
+  <script>
+    let indexCarrusel = 0;
+
+    function moverCarrusel(direccion) {
+      const carrusel = document.getElementById('contenedorCarrusel');
+      const totalElementos = document.querySelectorAll('.seccion').length;
+
+      indexCarrusel += direccion;
+
+      if (indexCarrusel < 0) {
+        indexCarrusel = totalElementos - 3;
+      } else if (indexCarrusel >= totalElementos - 2) {
+        indexCarrusel = 0;
+      }
+
+      const offset = -(indexCarrusel * 350);
+      carrusel.style.transform = `translateX(${offset}px)`;
+    }
+
+    const glide = new Glide('.glide', {
+      startAt: 0,
+      perView: 3,
+      gap: 20,
+      autoplay: 3000,
+      breakpoints: {
+        768: {  // Para pantallas con un ancho máximo de 768px (móviles)
+          perView: 1  // Mostrar 1 solo slide
+        }
+      }
+    });
+
+    glide.mount();
+  </script>
+
+</body>
+</html>
